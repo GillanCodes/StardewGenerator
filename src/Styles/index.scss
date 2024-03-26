@@ -21,4 +21,48 @@
     width: 680px;
     height: 696px;
     background-repeat: no-repeat;
+
+    position: relative;
+
+    .stardew_fields
+    {
+
+        position: absolute;
+
+        top: 44px;
+        right: 132px;
+
+
+        display: flex;
+        flex-direction: column;
+
+        .field
+        {
+            width: 172px;
+            height: 36px;
+
+            &:not(:first-child)
+            {
+                margin-top: 13px;
+            }
+
+            &:not(:last-child)
+            {
+                margin-bottom: 13px;
+            }
+
+
+            outline: none;
+            border: none;
+
+            background-color: #00000000;
+
+            &:hover
+            {
+                background-color: #00000050;
+            }
+            
+        }
+
+    }
 }
