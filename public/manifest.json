@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Stardew Generator",
+  "name": "Generate random name for your stardew valley playthrough",
   "icons": [
     {
       "src": "favicon.ico",
