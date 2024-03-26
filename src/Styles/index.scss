@@ -10,4 +10,15 @@
     background-position: 0;
     background-repeat: no-repeat;
     background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu
+{
+    width: 680px;
+    height: 696px;
+    background-repeat: no-repeat;
 }
