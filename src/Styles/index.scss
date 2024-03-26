@@ -65,4 +65,36 @@
         }
 
     }
+
+
+    .random
+    {
+
+        position: absolute;
+        top: 40px;
+        left: 32px;
+
+        height: 40px;
+        width: 40px;
+
+        background-color: #00000000;
+        border: none;
+        outline: none;
+
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:hover
+        {
+            height: 50px;
+            width: 50px;
+            
+            top: 35px;
+            left: 27px;
+
+            
+
+        }
+
+    }
 }
