@@ -1,5 +1,11 @@
 * {
     margin: 0;
+    
+}
+
+body 
+{ 
+    cursor: url('../../public/cursors/default.cur'), auto; 
 }
 
 .App
@@ -92,7 +98,10 @@
             top: 35px;
             left: 27px;
 
-            
+
+            cursor: url('../../public/cursors/select.cur'), pointer;
+
+
 
         }
 
