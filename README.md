@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Stardew Generator
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A randomizer for stardew valley games\
+By GillanCodes
 
-## Available Scripts
+## Purpose 
+This web app intended to generate random name for your new stardew valley save !\
+This app generate a random name, farm name and favorite thing.
 
-In the project directory, you can run:
+## Randomization 
+Currently the randomization is by a json file.\
 
-### `npm start`
+## TODO (WIP)
+I've planned to add many features such as gender selection for name, copy on click, lock a field ...\
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Local Installation
+First of all make sure to have NodeJS and npm ou yarm installed on your computer.\
+1. Download or clone the repo\
+1.a . Unzip the file (if manually download)\
+1.b . Open a terminal in the folder
+2. Type `npm i` to install all the dependencies\
+2.a . Type `npm run build` to build the app
+3. In the same time make sure to have `serve` installed\
+3.a . If not type `npm i --save -g serve`
+4. If you have installed `serve` and your build is successfully done you can run `serve -l [PORT such as 3000] -s [name of you build foder]`\
+4.a. If you have followed all the steps your command should be `serve -l 3000 -s build`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Support Me
+<a href="https://www.buymeacoffee.com/gillancodes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
