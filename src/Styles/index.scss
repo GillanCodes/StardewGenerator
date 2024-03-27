@@ -1,4 +1,9 @@
-* {
+@font-face {
+    font-family: stardew;
+    src: url("../../public/fonts/svthin.otf");
+}
+
+* { 
     margin: 0;
     
 }
@@ -46,6 +51,8 @@ body
         {
             width: 172px;
             height: 36px;
+            font-family: stardew;
+            font-size: 24px;
 
             &:not(:first-child)
             {
