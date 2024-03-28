@@ -35,6 +35,39 @@ body
 
     position: relative;
 
+
+    .borders
+    {
+        position: absolute;
+        display: flex;
+    }
+
+    .red_border
+    {
+
+        background-image: url('../../public/menu/red_border.png');
+        height: 64px;
+        width: 64px;
+
+        &.none
+        {
+            background-image: none;
+        }
+    }
+
+    .red_border#male
+    {
+        position: relative;
+        left: 80px;
+        top: 248px;
+    }
+    .red_border#female
+    {
+        position: relative;
+        left: 95px;
+        top: 248px;
+    }
+
     .stardew_fields
     {
 

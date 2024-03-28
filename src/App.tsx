@@ -24,6 +24,7 @@ function App() {
   const [menu, setMenu] = useState('field_empty')
 
   const [props, setProps] = useState<IProps>({name: "", farm: "", thing: ""});
+  const [gender, setGender] = useState(1);
  
   useEffect(() => {
     if (!isEmpty(props.name) && !isEmpty(props.farm) && !isEmpty(props.thing)) setMenu('field_not_empty');
@@ -44,6 +45,12 @@ function App() {
       <div className="menu" style={{ backgroundImage: `url(/menu/${menu}.png)`}}>
 
         <button className='random' style={{backgroundImage: "url(/menu/random_btn.png)"}} onClick={() => randomize()}></button>
+        
+        <div className="borders">
+          <div className={`red_border ${gender === 0 ? "" : "none"}`} id='male' onClick={() => setGender(0)}></div>
+          <div className={`red_border ${gender === 1 ? "" : "none"}`} id='female' onClick={() => setGender(1)}></div>
+        </div>
+        
 
         <form className='stardew_fields'>
           <input type="text" className='field' value={props.name} onChange={(e) => setProps({...props, name: e.target.value})}/>
