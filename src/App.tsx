@@ -29,15 +29,26 @@ function App() {
   useEffect(() => {
     if (!isEmpty(props.name) && !isEmpty(props.farm) && !isEmpty(props.thing)) setMenu('field_not_empty');
     else setMenu('field_empty');
+
+    console.log(props)
   }, [props]);
 
   function randomize()
   {
-    setProps({
-      name: randomizer.name[getRdm(randomizer.name.length)],
+
+    if (gender === 0) setProps({
+      ...props, 
+      name: randomizer.name.male[getRdm(randomizer.name.male.length)],
       farm: randomizer.farm[getRdm(randomizer.farm.length)],
       thing: randomizer.thing[getRdm(randomizer.thing.length)]
-    })
+
+    });
+    if (gender === 1) setProps({
+      ...props, 
+      name: randomizer.name.female[getRdm(randomizer.name.female.length)],
+      farm: randomizer.farm[getRdm(randomizer.farm.length)],
+      thing: randomizer.thing[getRdm(randomizer.thing.length)]
+    });
   }
 
   return (

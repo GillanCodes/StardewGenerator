@@ -1,28 +1,32 @@
 {
-    "name": [
-        "Penny",
-        "Ava",
-        "Anna",
-        "Ada",
-        "Hannah",
-        "Susan",
-        "Avice",
-        "Elinor",
-        "Eylmer",
-        "Mary",
-        "Blythe",
-        "Alban",
-        "Edmond",
-        "Lewis",
-        "Nathaniell",
-        "Abraham",
-        "George",
-        "Martin",
-        "Sampson",
-        "Walter",
-        "Theophilius",
-        "Ives"
-    ],
+    "name": {
+        "female": [
+            "Penny",
+            "Ava",
+            "Anna",
+            "Ada",
+            "Hannah",
+            "Susan",
+            "Avice",
+            "Elinor",
+            "Eylmer",
+            "Mary"
+        ],
+        "male": [
+            "Blythe",
+            "Alban",
+            "Edmond",
+            "Lewis",
+            "Nathaniell",
+            "Abraham",
+            "George",
+            "Martin",
+            "Sampson",
+            "Walter",
+            "Theophilius",
+            "Ives"
+        ]
+    },
     "farm": [
         "Sleeping Hills",
         "Maple Leaf",
