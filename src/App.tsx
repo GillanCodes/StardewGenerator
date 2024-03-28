@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import "./Styles/index.scss";
 import randomizer from "./randomizer.json";
+import { isEmpty } from './Utils';
 
 
 interface IProps 
@@ -23,7 +24,12 @@ function App() {
   const [menu, setMenu] = useState('field_empty')
 
   const [props, setProps] = useState<IProps>({name: "", farm: "", thing: ""});
-  
+ 
+  useEffect(() => {
+    if (!isEmpty(props.name) && !isEmpty(props.farm) && !isEmpty(props.thing)) setMenu('field_not_empty');
+    else setMenu('field_empty');
+  }, [props]);
+
   function randomize()
   {
     setProps({
