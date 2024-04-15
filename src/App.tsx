@@ -22,20 +22,9 @@ function getRdm(length:number)
 
 function App() {
 
-  const [menu, setMenu] = useState('field_empty')
-
   const [props, setProps] = useState<IProps>({name: "", farm: "", thing: ""});
   const [gender, setGender] = useState(1);
-
-  const [animation, setAnimation] = useState(0);
  
-  useEffect(() => {
-    if (!isEmpty(props.name) && !isEmpty(props.farm) && !isEmpty(props.thing)) setMenu('field_not_empty');
-    else setMenu('field_empty');
-
-    console.log(props)
-  }, [props]);
-
   function randomize()
   {
 
@@ -54,6 +43,9 @@ function App() {
     });
   }
 
+  useEffect(() => {
+    randomize();
+  }, []) 
 
   const copyText = (element:any) => {
     element.target.classList.add('animation')
@@ -62,7 +54,7 @@ function App() {
 
   return (
     <div className="App" style={{ backgroundImage: 'url(background.png)'}}>
-      <div className="menu" style={{ backgroundImage: `url(/menu/${menu}.png)`}}>
+      <div className="menu" style={{ backgroundImage: `url(/menu/field_not_empty.png)`}}>
 
         <button className='random' style={{backgroundImage: "url(/menu/random_btn.png)"}} onClick={() => randomize()}></button>
         
