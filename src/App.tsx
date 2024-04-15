@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import "./Styles/index.scss";
 import randomizer from "./randomizer.json";
 import { isEmpty } from './Utils';
+import { log } from 'console';
 
 
 interface IProps 
@@ -25,6 +26,8 @@ function App() {
 
   const [props, setProps] = useState<IProps>({name: "", farm: "", thing: ""});
   const [gender, setGender] = useState(1);
+
+  const [animation, setAnimation] = useState(0);
  
   useEffect(() => {
     if (!isEmpty(props.name) && !isEmpty(props.farm) && !isEmpty(props.thing)) setMenu('field_not_empty');
@@ -51,6 +54,12 @@ function App() {
     });
   }
 
+
+  const copyText = (element:any) => {
+    element.target.classList.add('animation')
+	  navigator.clipboard.writeText(element.target.value)
+  }
+
   return (
     <div className="App" style={{ backgroundImage: 'url(background.png)'}}>
       <div className="menu" style={{ backgroundImage: `url(/menu/${menu}.png)`}}>
@@ -64,9 +73,9 @@ function App() {
         
 
         <form className='stardew_fields'>
-          <input type="text" className='field' value={props.name} onChange={(e) => setProps({...props, name: e.target.value})}/>
-          <input type="text" className='field' value={props.farm} onChange={(e) => setProps({...props, farm: e.target.value})}/>
-          <input type="text" className='field' value={props.thing} onChange={(e) => setProps({...props, thing: e.target.value })}/>
+		      <input type="text" className='field' value={props.name} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
+          <input type="text" className='field' value={props.farm} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
+          <input type="text" className='field' value={props.thing} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
         </form>
 
       </div>
