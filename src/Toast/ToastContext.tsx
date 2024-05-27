@@ -18,18 +18,18 @@ export function ToastContextProvider({children}: PropsWithChildren)
         <Toasts />
         {children}
     </ToastContext.Provider>
-    
 }
 
 export function useToasts()
 {
-    const {pushToastRef} = useContext(ToastContext);
+    const { pushToastRef } = useContext(ToastContext);
+   
     return {
         pushToast: useCallback(
             (toast: Params) => {
                 pushToastRef.current(toast);
             }, 
-            [pushToastRef]
+            [pushToastRef]   
         )
     }
 }
