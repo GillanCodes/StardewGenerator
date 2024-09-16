@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 
 import "./Styles/index.scss";
 import randomizer from "./randomizer.json";
+import { ToastContextProvider, useToasts } from './Toast/ToastContext';
+
 
 interface IProps 
 {
@@ -20,6 +22,8 @@ function App() {
   const [props, setProps] = useState<IProps>({name: "", farm: "", thing: ""});
   const [gender, setGender] = useState(1);
 
+  const { pushToast } = useToasts()
+ 
   function randomize()
   {
 
@@ -47,26 +51,39 @@ function App() {
 	  navigator.clipboard.writeText(element.target.value)
   }
 
+  const test = (e:any) => {
+    e.preventDefault();
+    pushToast({
+      title: "Field Copied",
+      content: "Text has been copied on your clipboard"
+    });
+  }
+
   return (
-    <div className="App" style={{ backgroundImage: 'url(background.png)'}}>
-      <div className="menu" style={{ backgroundImage: `url(/menu/field_not_empty.png)`}}>
+    <ToastContextProvider>  
+      <div className="App" style={{ backgroundImage: 'url(background.png)'}}>
+        <div className="menu" style={{ backgroundImage: `url(/menu/field_not_empty.png)`}}>
 
-        <button className='random' style={{backgroundImage: "url(/menu/random_btn.png)"}} onClick={() => randomize()}></button>
+          <button className='random' style={{backgroundImage: "url(/menu/random_btn.png)"}} onClick={() => randomize()}></button>
           
-        <div className="borders">
-          <div className={`red_border ${gender === 0 ? "" : "none"}`} id='male' onClick={() => setGender(0)}></div>
-          <div className={`red_border ${gender === 1 ? "" : "none"}`} id='female' onClick={() => setGender(1)}></div>
-        </div>
-      
-        <form className='stardew_fields'>
-          <input type="text" className='field' value={props.name} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
-          <input type="text" className='field' value={props.farm} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
-          <input type="text" className='field' value={props.thing} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
-        </form>
-      </div>
+          <div className="borders">
+            <div className={`red_border ${gender === 0 ? "" : "none"}`} id='male' onClick={() => setGender(0)}></div>
+            <div className={`red_border ${gender === 1 ? "" : "none"}`} id='female' onClick={() => setGender(1)}></div>
+          </div>
+          
 
-      <a className='bmc' href="https://www.buymeacoffee.com/gillancodes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174" /></a>
-    </div>
+          <form className='stardew_fields'>
+            <button onClick={(e) => test(e)}>test</button>
+            <input type="text" className='field' value={props.name} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
+            <input type="text" className='field' value={props.farm} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
+            <input type="text" className='field' value={props.thing} onClick={(e:any) => copyText(e)} onAnimationEnd={(e:any) => e.target.classList.remove('animation')} />
+          </form>
+
+        </div>
+
+        <a className='bmc' href="https://www.buymeacoffee.com/gillancodes" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174" /></a>
+      </div>
+    </ToastContextProvider>
   );
 }
 
